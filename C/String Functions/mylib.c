@@ -115,3 +115,15 @@ char* stringReverse(char *s)
     }
     return s;
 }
+
+// memcpy()
+char* memCpy(char * dest, char *src, int n)
+{
+    char *start = dest ;
+    int i=0;
+    for(i=0;i<n;i++)
+    {
+        dest[i] = src[i];
+    }
+    return start;
+}
