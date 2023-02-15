@@ -76,4 +76,25 @@ char* stringConcat(char* ptr1, char* ptr2)
     return tmp;
 }
 
-
+// strchr()
+char * stringChar(char *str,int a)
+{
+    int flag = 0;
+    while(*str!='\0')
+    {
+        if(*str==(char)a) 
+        {
+            flag=1;
+            break;   
+        }
+        str++;
+    }
+    if(flag==0) 
+    {
+        return NULL;
+    }
+    else
+    {
+        return str;
+    }
+}
