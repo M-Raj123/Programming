@@ -152,3 +152,30 @@ char *memMove(char *dest, char *src, int n)
   }
   return dest;
 }
+
+// strtok()
+char* stringToken(char* s, char d)
+{
+    static char *buffer = NULL;
+    if(buffer==NULL)  // no address 
+    {
+        buffer = s;
+    }
+    if(!*buffer)      // check if '\0' true
+    {
+        return NULL;  
+    }
+
+    char *token = buffer;
+    while(*buffer && *buffer!=d) 
+    {
+        buffer++;
+    }
+
+    if(*buffer)
+    {
+        *buffer = '\0';
+        buffer+=1; 
+    }
+    return token;
+}
