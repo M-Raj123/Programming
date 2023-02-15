@@ -127,3 +127,28 @@ char* memCpy(char * dest, char *src, int n)
     }
     return start;
 }
+
+// memmove()
+char *memMove(char *dest, char *src, int n) 
+{
+  char *d = dest;
+  char *s = src;
+  if (d == s) return dest;  // check address
+  if (d < s)  
+  {
+     while (n--)  
+     {
+        *d++ = *s++;  // higher to lower
+     }
+  } 
+  else 
+  {
+    d += n - 1;
+    s += n - 1;
+    while(n--)
+    {
+      *d-- = *s--;  // lower to higher
+    }
+  }
+  return dest;
+}
