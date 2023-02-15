@@ -9,7 +9,7 @@ int findStrLen(char *str)
     return i;
 }
 
-// strcat
+// strcpy
 char* stringCopy(char *dest, char *src)
 {
     if(dest == NULL && src==NULL)
@@ -24,6 +24,34 @@ char* stringCopy(char *dest, char *src)
         dest++;
         src++;
     }
+    
+    // null terminate dest string
     *dest='\0';
+    
     return ptr;
+}
+
+// strncpy
+char* stringNCopy(char * dest, char *src, int size)
+{
+    if(dest == NULL && src==NULL)
+    {
+        return NULL;
+    }
+
+    char *str = dest;
+    int i=1;
+    while(*src!='\0')
+    {
+        if(i>size) break;
+        *dest = *src;
+        i++;
+        dest++;
+        src++;
+    }
+
+    // null terminate dest string
+    *dest = '\0';
+    
+    return str;
 }
