@@ -55,3 +55,25 @@ char* stringNCopy(char * dest, char *src, int size)
     
     return str;
 }
+
+// strcat
+char* stringConcat(char* ptr1, char* ptr2)
+{
+    printf("str1:%s\nstr2:%s\n",ptr1,ptr2);
+    char *tmp = (char*)malloc(sizeof(char));
+    int i=0;
+    
+    for(i=0;ptr1[i]!='\0';i++)
+    {
+        tmp[i] = ptr1[i];
+    }
+    for(int j=0;ptr2[j]!='\0';j++)
+    {
+        tmp[i++] = ptr2[j];  
+    }
+
+    tmp[i]= '\0';
+    return tmp;
+}
+
+
