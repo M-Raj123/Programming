@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// strlen
+// strlen()
 int findStrLen(char *str)
 {
     int i=0;
@@ -9,7 +9,7 @@ int findStrLen(char *str)
     return i;
 }
 
-// strcpy
+// strcpy()
 char* stringCopy(char *dest, char *src)
 {
     if(dest == NULL && src==NULL)
@@ -31,7 +31,7 @@ char* stringCopy(char *dest, char *src)
     return ptr;
 }
 
-// strncpy
+// strncpy()
 char* stringNCopy(char * dest, char *src, int size)
 {
     if(dest == NULL && src==NULL)
@@ -56,7 +56,7 @@ char* stringNCopy(char * dest, char *src, int size)
     return str;
 }
 
-// strcat
+// strcat()
 char* stringConcat(char* ptr1, char* ptr2)
 {
     printf("str1:%s\nstr2:%s\n",ptr1,ptr2);
@@ -97,4 +97,21 @@ char * stringChar(char *str,int a)
     {
         return str;
     }
+}
+
+// strrev()
+char* stringReverse(char *s)
+{
+    // printf("the original String:%s\n",s);
+    int i = 0, j = findStrLen(s)-1;
+    while( i < j )
+    {
+        char tmp = s[i];
+        s[i] = s[j];
+        s[j] = tmp;
+
+        i++;
+        j--;
+    }
+    return s;
 }
